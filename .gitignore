@@ -1,0 +1,14 @@
+# Minecraft server runtime & world data
+world/
+logs/
+backups/
+crash-reports/
+
+# Server configuration & properties (keep unique per instance)
+server.properties
+eula.txt
+banned-players.json
+banned-ips.json
+ops.json
+usercache.json
+whitelist.json
