@@ -3,12 +3,13 @@ Description=Minecraft Fabric Server
 After=network.target
 
 [Service]
-Type=simple
+Type=forking
 User=ubuntu
 WorkingDirectory=/home/ubuntu/minecraft
-ExecStart=/usr/bin/screen -DmS minecraft /bin/bash /home/ubuntu/minecraft/start.sh
+ExecStart=/usr/bin/screen -dmS minecraft /bin/bash /home/ubuntu/minecraft/start.sh
+ExecStop=/usr/bin/screen -S minecraft -X stuff "stop^M"
+KillMode=none
 Restart=on-failure
-RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
